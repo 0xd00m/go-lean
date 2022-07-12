@@ -30,4 +30,10 @@ func TestHello(t *testing.T) {
 		want := "Hola, emmanuel"
 		error_message(t, got, want)
 	})
+	t.Run("hello with french", func(t *testing.T) {
+		got := hello("emmanuel", "French")
+		want := "Bonjour, emmanuel"
+		error_message(t, got, want)
+	})
+
 }
