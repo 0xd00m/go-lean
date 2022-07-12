@@ -12,7 +12,7 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("hello with names", func(t *testing.T) {
-		got := hello("chris")
+		got := hello("chris", "")
 		want := "Hello, chris"
 
 		error_message(t, got, want)
@@ -20,8 +20,14 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("hello without names", func(t *testing.T) {
-		got := hello("")
+		got := hello("", "")
 		want := "Hello, world"
+		error_message(t, got, want)
+	})
+
+	t.Run("hello with spanish", func(t *testing.T) {
+		got := hello("emmanuel", "Spanish")
+		want := "Hola, emmanuel"
 		error_message(t, got, want)
 	})
 }
