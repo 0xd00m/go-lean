@@ -6,7 +6,7 @@ import (
 )
 
 func TestLoop(t *testing.T) {
-	got := loop("a", 7)
+	got := Loop("a", 7)
 	want := "aaaaaa"
 
 	if got != want {
@@ -15,14 +15,14 @@ func TestLoop(t *testing.T) {
 }
 
 func ExampleLoop() {
-	result := loop("a", 7)
+	result := Loop("a", 7)
 	fmt.Println(result)
 	// Output: aaaaaa
 }
 
 func BenchmarkLoop(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		loop("a", 7)
+		Loop("a", 7)
 	}
 
 }
